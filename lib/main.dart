@@ -37,10 +37,24 @@ class MyApp extends StatelessWidget {
 }
 
 class AcademyCity extends StatelessWidget {
-  const AcademyCity ({super.key});
+  const AcademyCity({super.key});
+
+  static const List<Tab> myTabs = <Tab>[
+    Tab(text: '科學側'),
+    Tab(text: '魔法側'),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: Text("Academy city"),),);
+    return DefaultTabController(length: myTabs.length,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: const TabBar(tabs: myTabs),
+        ),
+        body: SafeArea(
+          child: Text("Academy city"),
+        ),
+      ),
+    );
   }
 }

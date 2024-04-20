@@ -43,11 +43,37 @@ class EsperTile extends StatelessWidget {
   }
 }
 
+class EsperDetail extends StatelessWidget {
+  const EsperDetail({super.key, required this.esper});
+  final Esper esper;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(children: [
+          Image.asset(
+            "assets/${esper.imageNamePrefix}_full_body.png",
+            width: 300,
+          ),
+          Text(
+            esper.name,
+            style: const TextStyle(fontSize: 40),
+          ),
+          Padding(
+              padding: const EdgeInsets.only(left: 5, right: 5),
+              child: Text(esper.description,style: const TextStyle(fontSize: 20),))
+        ]),
+      ),
+    );
+  }
+}
+
 class EsperPage extends StatelessWidget {
   const EsperPage({super.key});
   final List<Esper> espers = const [
     Esper("一方通行???", 5, "accelerator",
-        "學園都市7名Level 5 能力者的第一位，學園都市新任統括理事會理事長。從小就生活在學園都市，本名不詳，性別不明。通常以其超能力的名稱「一方通行」作為稱呼。一方通行，是一方通行自身在開發後覺醒並由本人命名的超能力。此能力可以操縱皮膚直接觸的動量及物體的方向。",
+        "學園都市7名Level 5 能力者的第一位，學園都市新任統括理事會理事長。從小就生活在學園都市，本名不詳，性別不明，通常以其超能力的名稱「一方通行」作為稱呼。一方通行，是一方通行自身在開發後覺醒並由本人命名的超能力，此能力可以操縱皮膚直接觸的動量及物體的方向。",
         codeName: "一方通行"),
     Esper("垣根帝督", 5, "darkmatter",
         "學園都市七名Level 5 能力者中的第二位，暗部組織 SCHOOL 的首領。能力是未元物質，他所產生的「未元物質」是這個世上不存在的物質，不是「還沒發現」或是「理論上應該存在」，是真正不存在的東西，所以不適用於既有物理法則。光波和電子波只要透過他白色翅膀上的細小空隙，就會改變性質、扭曲成不可能存在的向量，並依照其獨自的法則行動。",
@@ -65,7 +91,8 @@ class EsperPage extends StatelessWidget {
             "心理掌握"), //https://huiji-public.huijistatic.com/toaru/uploads/1/13/ToaruIF-Shokuhou_Misaki.png
     Esper("削板軍霸", 5, "attackcrash",
         "學園都市七名Level 5 能力者中的第七位。有別於學園都市經過超能力開發計畫生成的能力者，削板軍霸是擁有與生俱來的強大才能的「原石」(天生就擁有超自然能力的能力者)。念動砲彈是削板軍霸的絕技，可以以擊毀很大的碎石，能夠擊中10米外的目標。",
-        codeName: "念動砲彈"),//https://truth.bahamut.com.tw/s01/201912/723b6398905941b1f1b41920fdc7f790.JPG
+        codeName:
+            "念動砲彈"), //https://truth.bahamut.com.tw/s01/201912/723b6398905941b1f1b41920fdc7f790.JPG
   ];
 
   @override
@@ -73,7 +100,15 @@ class EsperPage extends StatelessWidget {
     return ListView.builder(
         itemCount: espers.length,
         itemBuilder: (context, index) {
-          return EsperTile(esper: espers[index]);
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => EsperDetail(esper: espers[index])));
+            },
+            child: EsperTile(esper: espers[index]),
+          );
         });
   }
 }

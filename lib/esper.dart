@@ -50,19 +50,24 @@ class EsperDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(children: [
           Image.asset(
             "assets/${esper.imageNamePrefix}_full_body.png",
-            width: 300,
+            width: 380,
           ),
           Text(
             esper.name,
             style: const TextStyle(fontSize: 40),
           ),
           Padding(
-              padding: const EdgeInsets.only(left: 5, right: 5),
-              child: Text(esper.description,style: const TextStyle(fontSize: 20),))
+            padding: const EdgeInsets.only(left: 5, right: 5),
+            child: Text(
+              esper.description,
+              style: const TextStyle(fontSize: 20),
+            ),
+          ),const SizedBox(height: 30,)
         ]),
       ),
     );
@@ -82,7 +87,7 @@ class EsperPage extends StatelessWidget {
         "學園都市七名Level 5 能力者中的第三位，常盤台中學二年級學生。能力是電擊使，可以產生及控制電力、磁力及電磁波。",
         codeName: "超雷磁炮"),
     Esper("麥野沉利", 5, "meltdowner",
-        "學園都市七名Level 5 能力者中的第四位，為暗部組織 ITEM 的領導人物。能力為原子崩壞，本質是粒機波形高速炮，麥野透過強制操縱介於波與粒子之間、狀況曖昧的電子，透過發射這種電子射線作為攻擊手段，威力極為強大；也可以用做護盾來防禦。麥野還能像火箭引擎一樣發射來彈開自己，實現高速移動和閃避。發動該能力時，看起來很像從半空中生成若干純白色[註2]的發光球體，並從中迸射出雷射光束。",
+        "學園都市七名Level 5 能力者中的第四位，為暗部組織 ITEM 的領導人物。能力為原子崩壞，本質是粒機波形高速炮，麥野透過強制操縱介於波與粒子之間、狀況曖昧的電子，透過發射這種電子射線作為攻擊手段，威力極為強大；也可以用做護盾來防禦。麥野還能像火箭引擎一樣發射來彈開自己，實現高速移動和閃避。發動該能力時，看起來很像從半空中生成若干純白色的發光球體，並從中迸射出雷射光束。",
         codeName:
             "原子崩壞"), //https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newton.com.tw%2Fwiki%2F%25E9%25BA%25A5%25E9%2587%258E%25E6%25B2%2588%25E5%2588%25A9&psig=AOvVaw3LFP0h4fVEFCdzUNYSi9QU&ust=1713709169008000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMDfv6n-0IUDFQAAAAAdAAAAABAP
     Esper("食蜂操祈", 5, "mentalout",

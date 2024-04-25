@@ -1,6 +1,7 @@
 import 'package:academy_city/academy_city_introduction.dart';
 import 'package:flutter/material.dart';
 import 'package:academy_city/esper.dart';
+import 'package:academy_city/magician.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,7 +43,7 @@ class AcademyCity extends StatelessWidget {
           bottom: const TabBar(tabs: myTabs),
         ),
         body: const TabBarView(
-          children: [EsperPage(), AcademyCityIntroduction(),Text("show magician")],
+          children: [EsperPage(), AcademyCityIntroduction(),MagicianPage()],
         ),
       ),
     );

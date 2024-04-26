@@ -43,7 +43,7 @@ class AcademyCity extends StatelessWidget {
           bottom: const TabBar(tabs: myTabs),
         ),
         body: const TabBarView(
-          children: [EsperPage(), AcademyCityIntroduction(),MagicianPage()],
+          children: [EsperPage(), AcademyCityIntroduction(), MagicianPage()],
         ),
       ),
     );

@@ -98,7 +98,8 @@ class EsperPage extends StatelessWidget {
     Esper("削板軍霸", 5, "attackcrash",
         "學園都市七名Level 5 能力者中的第七位。有別於學園都市經過超能力開發計畫生成的能力者，削板軍霸是擁有與生俱來的強大才能的「原石」(天生就擁有超自然能力的能力者)。念動砲彈是削板軍霸的絕技，可以以擊毀很大的碎石，能夠擊中10米外的目標。",
         codeName:
-            "念動砲彈"), //https://truth.bahamut.com.tw/s01/201912/723b6398905941b1f1b41920fdc7f790.JPG
+            "念動砲彈"), /*https://truth.bahamut.com.tw/s01/201912/723b6398905941b1f1b41920fdc7f790.JPG
+            https://lain.bgm.tv/pic/crt/l/92/7e/74715_crt_Ga0A7.jpg?r=1578722199*/
   ];
 
   @override

@@ -63,11 +63,14 @@ class MagicTile extends StatelessWidget {
         children: [
           Text(
             magic.name,
-            style: const TextStyle(fontSize: 20, color: Colors.orange),
+            style: const TextStyle(fontSize: 30, color: Colors.orange),
           ),
           Text(
             magic.description,
-            style: const TextStyle(color: Color.fromARGB(166, 255, 193, 7)),
+            style: const TextStyle(
+              color: Color.fromARGB(166, 255, 193, 7),
+              fontSize: 20,
+            ),
           )
         ],
       ),
@@ -101,16 +104,20 @@ class MagicianDetail extends StatelessWidget {
                 children: [
                   Text(
                     magician.magicName,
-                    style: const TextStyle(color: Colors.purple),
+                    style: const TextStyle(color: Colors.purple, fontSize: 20),
                   ),
                   Text(
                     magician.organization,
                     style: const TextStyle(
-                        color: Color.fromARGB(198, 204, 132, 24)),
+                        color: Color.fromARGB(198, 204, 132, 24), fontSize: 20),
                   )
                 ],
               ),
-              Text(magician.description),
+              Padding(
+                padding: const EdgeInsets.only(left: 5, right: 5, top: 15),
+                child: Text(magician.description,
+                    style: const TextStyle(fontSize: 20)),
+              ),
               for (Magic magic in magician.magics) MagicTile(magic: magic),
               const SizedBox(height: 20)
             ],
@@ -145,9 +152,9 @@ class MagicianPage extends StatelessWidget {
       '史提爾是隸屬於英國清教徒必要之惡教會的魔法師。他年僅十四歲就完全解析現存的二十四個符文文字，更開發了六個具有新力量的符文文字的天才。兩年前與茵蒂克絲相遇並成為了她的監護人，短短一年時間，這個少女早已成為了史提爾堅守一生的信念，在上條當麻拯救了茵蒂克絲之後，主動讓出了伴其身邊的位置，同時在多次與上條接觸及並肩作戰後，受其影響重新確認了身為魔法師的生存之道。個性冷靜，做事果斷不猶豫，能夠將工作與個人感情區分開來，嚴格執行任務，對待敵人冷酷無情，但也有著自己的原則，基本上他是不會出手攻擊與魔法世界無緣無故的人。為了守護自己珍惜之人可以毫不猶豫衝入敵陣。不擅長團體行動，害怕自己的火焰魔法波及同伴和束縛自己是一部分，性格上的缺陷也讓他更喜歡單獨作戰。吸菸是史提爾的嗜好之一，曾稱「沒有尼古丁和焦油的世界是地獄」，習慣性地咬著香菸濾嘴，其也能用來配合魔法進行點火。',
       [
         Magic('符文魔法',
-            '符文魔法與賽爾魔法是北歐神話中的兩大魔法，傳說奧丁在獻祭了眼睛獲得知識後，創造了盧恩文字，文字本身就蘊含著魔力。符文魔法必須先刻上符文刻印才能發動，反過來說，只要符文刻印被破壞，不管再強大的魔法也會失去效力。史提爾完全解析現存的二十四個符文文字，更開發了六個具有新力量的符文文字的天才魔法師，他會透過事先佈置符文卡片來讓自己使用符文魔法。擅長火元素的魔法，為此將頭髮染成了代表火元素的紅色以增幅術式。在詠唱時常使用卡巴拉拼詞法縮短英文詠唱。在戰鬥時會遵循魔法師的法則，使用符文「閒人驅散」讓這附近的人產生一種不知為何不想靠近這裡的心情，從而讓無關人士離開。'),
+            '盧恩文字本身就蘊含著魔力。符文魔法必須先刻上符文刻印才能發動，史提爾完全解析現存的二十四個符文文字，更開發了六個具有新力量的符文文字。他會透過事先佈置符文卡片來讓自己使用符文魔法。擅長火元素的魔法，為此將頭髮染成了代表火元素的紅色以增幅術式。'),
         Magic('獵殺魔女之王',
-            '生成巨大火焰球體，化作溫度超過攝氏三千度，手持兩公尺巨大十字架的火焰巨人。攻擊獵殺魔女之王本身是沒有效果的，只要是在佈置的符文刻印範圍之內，火焰巨人就會在被破壞後以不到十分之一秒的時間瞬間復活。獵殺魔女之王會因符文卡數量多寡，而大幅改變其強弱程度。火焰巨人本身有著自動追蹤敵人將其殲滅的特性。但只要超出佈置的符文結界之外，火焰巨人就無能為力。'),
+            '生成巨大火焰球體，化作溫度超過攝氏三千度，手持兩公尺巨大十字架的火焰巨人。獵殺魔女之王會因符文卡數量多寡，而大幅改變其強弱程度。火焰巨人本身有著自動追蹤敵人將其殲滅的特性。但只要超出佈置的符文結界之外，火焰巨人就無能為力。'),
       ], /*https://toaru.huijiwiki.com/wiki/%E5%8F%B2%E6%8F%90%E5%B0%94%C2%B7%E9%A9%AC%E6%A0%BC%E5%8A%AA%E6%96%AF#/media/%E6%96%87%E4%BB%B6:Image-%E5%8F%B2%E6%8F%90%E5%B0%94-%E5%8A%A8%E7%94%BB%E8%AE%BE%E5%AE%9A.jpg
       https://toaru.huijiwiki.com/wiki/%E5%8F%B2%E6%8F%90%E5%B0%94%C2%B7%E9%A9%AC%E6%A0%BC%E5%8A%AA%E6%96%AF#/media/%E6%96%87%E4%BB%B6:ToaruIF-Stiyl_Magnus.png */
     ),
@@ -162,7 +169,7 @@ class MagicianPage extends StatelessWidget {
         Magic('裂神者',
             '神裂運用獨特的呼吸法在體內精練魔力，就可以讓自己化身為「裂神者」。化身為「裂神者」的神裂，可以在一定時間內獲得超越凡人領域的能力。血管、肌肉、神經、內臟、骨骼都在術式的影響下獲得了「殺神」的能力。'),
         Magic('唯閃',
-            '七天七刀一擊必殺的拔刀術。對特定宗教迂迴使出其他教義的術式攻擊。十字教的術式不行的話就用佛教術式，佛教術式不行的話就用神道術式，神道術式不行的話就用十字教術式，像這樣藉由適當互補彼此的弱點，發揮出完全破壞力的獨一無二攻擊式是「唯閃」。理論上，「唯閃」可以將一神教天使一刀結果。當然，「唯閃」發動時，神裂被強行引出的威力，會超過肉體能操縱的運動量，所以不可能在這種狀態下長時間進行戰鬥。正因如此，神裂的「唯閃」才要淬煉成一發就能決勝負的拔刀術。「唯閃」是天草式歷史的結晶。雖然天草式的同伴們無法使用「唯閃」，但是，這招的基礎劍術、鋼絲、術式，它的組合與戰術模式，全都是天草式的前輩們教給神裂的。'),
+            '七天七刀一擊必殺的拔刀術。對特定宗教迂迴使出其他教義的術式攻擊。十字教的術式不行的話就用佛教術式，佛教術式不行的話就用神道術式，神道術式不行的話就用十字教術式，像這樣藉由適當互補彼此的弱點，發揮出完全破壞力的獨一無二攻擊式是「唯閃」。'),
       ], /* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSZgexd-5joyzuKPn5ZU9KX_SbeTN7815vTm_Hi-4f6Q&s
       https://neoapo.com/images/character/1804/d9a5ee67b9373a5315875f69d34aac46.gif */
     )

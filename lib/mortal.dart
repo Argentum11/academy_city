@@ -50,7 +50,10 @@ class MortalDetail extends StatelessWidget {
               mortal.name,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
-            Text(mortal.description),
+            Padding(
+              padding: const EdgeInsets.only(left: 5,right: 5, top: 10),
+              child: Text(mortal.description,style: const TextStyle(fontSize: 20),),
+            ),
             const SizedBox(
               height: 20,
             )
